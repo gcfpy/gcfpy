@@ -1,0 +1,12 @@
+PyQt5>=5.15
+matplotlib>=3.8
+numpy>=1.26
+pandas>=2.2
+lmfit>=1.2
+emcee
+sympy
+scipy
+corner
+numdifftools
+pyqt5-sip
+sip

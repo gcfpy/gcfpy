@@ -1,0 +1,56 @@
+site_name: Graphical Curve Fit for Python
+theme:
+  name: sandstone 
+  highlightjs: true
+  highlightjs_style: github
+  custom_dir: docs/overrides
+
+
+nav:
+  - Home: index.md
+  - User guide :
+      - Getting started: user_guide/getting_started.md
+      - Installation: user_guide/install.md
+      - Getting help: user_guide/help.md
+  - Tutorials :
+      - Basic: tutorials/basic_fit.md
+      - Plots lmfit/odr : tutorials/plots.md
+      - Plots mcmc : tutorials/mcmc.md
+      - Multi 1D : tutorials/multi_1d.md
+      - 2D fot : tutorials/2d_fit.md
+      - Manual : tutorials/manual_fit.md
+      - Comparison: tutorials/comparison.md
+  - UI:
+      - Overview: ui/overview.md
+      - Menus: ui/menus.md
+      - Toolbar: ui/toolbar.md
+      - Docks: ui/docks.md
+  - Fit:
+      - Formula: fit/fit_formula.md
+      - Options: fit/fit_options.md
+      - Manual Fit: fit/manual.md
+      - Comparison: fit/fit_comparison.md
+      - Fit Result : fit/results.md
+      - MCMC : fit/mcmc.md
+  - Data:
+      - Load Data: data/data_loader.md
+      - Add Custom Loader: data/custom_data_loader.md
+  - Dev:
+      - Overview: dev/overview.md
+      - FitTab: dev/fit_tab.md
+      - Toolbar: dev/toolbar.md
+      - Fit Control: dev/fit_control.md
+      - Fit Processor: dev/fit_processor.md
+      - Fit Comparison: dev/fit_comparison.md
+      - Plot System: dev/plot.md
+
+
+plugins:
+    - search
+    - mermaid2
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true

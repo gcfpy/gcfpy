@@ -1,0 +1,5 @@
+D:/Data/JeanBaptiste/program/gcfpy/examples/data/multi1d_fit_tuto.csv
+D:/Data/JeanBaptiste/program/gcfpy/examples/data/surface.csv
+D:/Data/JeanBaptiste/program/gcfpy/examples/data/manual_fit_tuto.csv
+D:/Data/JeanBaptiste/program/gcfpy/examples/data/fit_comparison.csv
+D:/Data/JeanBaptiste/program/gcfpy/examples/data/complex_data.csv
