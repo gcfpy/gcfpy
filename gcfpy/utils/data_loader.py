@@ -3,8 +3,6 @@ import os
 import pandas as pd
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
-from gcfpy.utils.h5_loader import read_h5
-
 
 class DataLoader:
     """
@@ -43,8 +41,6 @@ class DataLoader:
 
         if file_path.lower().endswith(".csv"):
             df = self.read_csv(file_path)
-        elif file_path.lower().endswith((".h5", ".hdf5")):
-            df = read_h5(file_path)
         else:
             print(f"Unsupported file format: {file_path}")
             return None, None

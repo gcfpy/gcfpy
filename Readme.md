@@ -34,7 +34,7 @@ Other tools such as [PyModelFit](https://pythonhosted.org/PyModelFit/gui.html), 
 
 ```bash
 git clone https://github.com/gcfpy/gcfpy
-cd curve_fitting
+cd gcfpy
 pip install -e .
 ```
 
