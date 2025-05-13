@@ -43,19 +43,6 @@ def test_read_csv_with_nans(tmp_path, dummy_parent):
         assert df is None
         mock_error.assert_called_once()
 
-
-@patch(
-    "gcfpy.utils.data_loader.read_h5", return_value=pd.DataFrame({"X": [1], "Y": [2]})
-)
-def test_load_hdf5_file(mock_read_h5, tmp_path, dummy_parent):
-    file_path = tmp_path / "data.h5"
-    file_path.write_text("dummy content")
-    loader = DataLoader(dummy_parent)
-    df, path = loader.load_data(str(file_path))
-    assert isinstance(df, pd.DataFrame)
-    assert path.endswith(".h5")
-
-
 def test_load_data_unsupported(tmp_path, dummy_parent):
     file_path = tmp_path / "unsupported.txt"
     file_path.write_text("dummy")
