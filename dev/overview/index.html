@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Overview - Graphical Curve Fit for Python</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../../css/brands.min.css" rel="stylesheet"/>
+<link href="../../css/solid.min.css" rel="stylesheet"/>
+<link href="../../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">User guide</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_guide/getting_started/">Getting started</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/install/">Installation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/help/">Getting help</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Tutorials</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../tutorials/basic_fit/">Basic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/plots/">Plots lmfit/odr</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/mcmc/">Plots mcmc</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/multi_1d/">Multi 1D</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/2d_fit/">2D fot</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/manual_fit/">Manual</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/comparison/">Comparison</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">UI</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../ui/overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/menus/">Menus</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/docks/">Docks</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Fit</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../fit/fit_formula/">Formula</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_options/">Options</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/manual/">Manual Fit</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_comparison/">Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/results/">Fit Result</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/mcmc/">MCMC</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Data</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../data/data_loader/">Load Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../data/custom_data_loader/">Add Custom Loader</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-current="page" aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button">Dev</a>
+<ul class="dropdown-menu">
+<li>
+<a aria-current="page" class="dropdown-item active" href="./">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_tab/">FitTab</a>
+</li>
+<li>
+<a class="dropdown-item" href="../toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_control/">Fit Control</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_processor/">Fit Processor</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_comparison/">Fit Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../plot/">Plot System</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../../data/custom_data_loader/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../fit_tab/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#application-entry-and-main-window">Application Entry and Main Window</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#role-of-mainwindow">Role of MainWindow</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#system-diagram">System Diagram</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#ui-initialization">UI Initialization</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#tab-lifecycle">Tab Lifecycle</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#dock-visibility-and-view-menu">Dock Visibility and View Menu</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#grouped-methods-in-mainwindow">Grouped Methods in MainWindow</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#connected-modules">Connected Modules</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#notes">Notes</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="application-entry-and-main-window">Application Entry and Main Window</h1>
+<p>This document describes the responsibilities and structure of the <code>MainWindow</code> class, which serves as the central controller of the user interface. It manages tabs, toolbars, menus, layout state, and forwards loaded data to the active tab. While it plays a crucial structural role, it delegates all domain-specific logic (e.g. fitting, plotting) to components like <code>FitTab</code>.</p>
+<blockquote>
+<p>The class is currently very large and tightly coupled. It would benefit from a future refactoring to isolate responsibilities more clearly.</p>
+</blockquote>
+<hr/>
+<h2 id="role-of-mainwindow">Role of <code>MainWindow</code></h2>
+<ul>
+<li>Hosts all top-level UI components (toolbar, menus, tabs)</li>
+<li>Creates and switches between tabs (<code>FitTab</code>, etc.)</li>
+<li>Manages global application layout and dock visibility</li>
+<li>Handles file I/O operations through menu actions</li>
+<li>Injects loaded data into the current tab</li>
+</ul>
+<hr/>
+<h2 id="system-diagram">System Diagram</h2>
+<div class="mermaid">graph TD
+    Main[MainWindow]
+    Fit[FitTab]
+    Plot[PlotWidget]
+    Toolbar[Toolbar]
+    Config[ConfigManager]
+    Loader[DataLoader]
+    MenuBar[Menu Bar]
+    Docks[Dock Widgets]
+
+    Main --&gt; Fit
+    Main --&gt; Toolbar
+    Main --&gt; MenuBar
+    Main --&gt; Config
+    Main --&gt; Loader
+    Fit --&gt; Plot
+    Fit --&gt; Docks
+</div>
+<hr/>
+<h2 id="ui-initialization">UI Initialization</h2>
+<pre><code class="language-python">class MainWindow(QMainWindow):
+    def __init__(self):
+        self.config = ConfigManager()
+        self.setFixedSize(...)
+        self._init_interface()
+</code></pre>
+<p>All core components (menu bar, toolbar, tab container, status bar) are initialized once in <code>_init_interface()</code>. A first <code>FitTab</code> is created by default.</p>
+<hr/>
+<h2 id="tab-lifecycle">Tab Lifecycle</h2>
+<p>Tabs are created using <code>add_fit_tab()</code> and inserted into the central <code>QTabWidget</code>. When the user switches tabs, the View menu is rebuilt to reflect the correct dock widgets and toolbar state.</p>
+<pre><code class="language-python">plot_widget = PlotWidget(self)
+new_tab = FitTab(self, plot_widget)
+self.tabs.addTab(new_tab, new_tab.get_fit_name())
+</code></pre>
+<hr/>
+<h2 id="dock-visibility-and-view-menu">Dock Visibility and View Menu</h2>
+<p>Each tab manages its own docks (fit panel, plot, results...). The <code>MainWindow</code> maintains a mapping of visible docks and their associated menu actions for each tab:</p>
+<pre><code class="language-python">self.view_actions_per_tab[tab] = {
+    "Fit Formula": (action, dock),
+    ...
+}
+</code></pre>
+<p>When switching tabs, the view menu is cleared and rebuilt accordingly.</p>
+<hr/>
+<h2 id="grouped-methods-in-mainwindow">Grouped Methods in <code>MainWindow</code></h2>
+<p>The table below categorizes each method by role.</p>
+<h3 id="1-initialization">1. Initialization</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__init__()</code></td>
+<td>Reads config and initializes main UI layout</td>
+</tr>
+<tr>
+<td><code>_init_interface()</code></td>
+<td>Builds toolbar, menus, status bar, tab system</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="2-menu-setup">2. Menu Setup</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_init_file_menu()</code></td>
+<td>Creates File menu: Load, Export, Exit</td>
+</tr>
+<tr>
+<td><code>_init_fits_menu()</code></td>
+<td>Adds New/Close Fit actions</td>
+</tr>
+<tr>
+<td><code>_init_view_menu()</code></td>
+<td>Connects menu items to dock visibility</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="3-tab-management">3. Tab Management</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add_fit_tab()</code></td>
+<td>Creates a new <code>FitTab</code> and activates it</td>
+</tr>
+<tr>
+<td><code>get_current_fit_tab()</code></td>
+<td>Returns active <code>FitTab</code> or <code>None</code></td>
+</tr>
+<tr>
+<td><code>close_fit_tab(index)</code></td>
+<td>Closes tab at the given index</td>
+</tr>
+<tr>
+<td><code>rename_tab(index)</code></td>
+<td>Renames tab via inline <code>QLineEdit</code></td>
+</tr>
+<tr>
+<td><code>duplicate_tab(index)</code></td>
+<td>Copies data, formula, and options to new tab</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="4-view-state-docks">4. View State &amp; Docks</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_update_view_menu_for_current_tab()</code></td>
+<td>Rebuilds View menu when tab changes</td>
+</tr>
+<tr>
+<td><code>_init_view_menu()</code></td>
+<td>Registers visibility toggles for tab docks</td>
+</tr>
+<tr>
+<td><code>restore_default_view()</code></td>
+<td>Restores all docks in current tab</td>
+</tr>
+<tr>
+<td><code>_snapshot_dock_states_before_switch(index)</code></td>
+<td>Saves dock state before tab switch</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="5-toolbar-state">5. Toolbar State</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_toolbar_buttons(enabled)</code></td>
+<td>Enables/disables toolbar buttons after a fit</td>
+</tr>
+<tr>
+<td><code>_snapshot_toolbar_state(tab)</code></td>
+<td>Records which toolbar buttons are enabled</td>
+</tr>
+<tr>
+<td><code>_restore_toolbar_state(tab)</code></td>
+<td>Re-applies the saved toolbar state</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="6-data-io">6. Data I/O</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>load_data_from_menu()</code></td>
+<td>Loads data via file dialog</td>
+</tr>
+<tr>
+<td><code>load_previous_data()</code></td>
+<td>Loads last accessed file</td>
+</tr>
+<tr>
+<td><code>_inject_data_into_tab()</code></td>
+<td>Injects DataFrame into current tab</td>
+</tr>
+<tr>
+<td><code>unload_data()</code></td>
+<td>Clears data from the current tab</td>
+</tr>
+<tr>
+<td><code>export_data()</code></td>
+<td>Exports current data to CSV</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="7-status">7. Status</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>show_status()</code></td>
+<td>Displays message in the status bar</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="8-app-entry-point">8. App Entry Point</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main()</code></td>
+<td>Entry point to launch the app</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="connected-modules">Connected Modules</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FitTab</code></td>
+<td>Main per-dataset fit interface</td>
+</tr>
+<tr>
+<td><code>Toolbar</code></td>
+<td>Global toolbar shared across tabs</td>
+</tr>
+<tr>
+<td><code>PlotWidget</code></td>
+<td>Rendering backend used by each tab</td>
+</tr>
+<tr>
+<td><code>ConfigManager</code></td>
+<td>Manages saved layout, window size</td>
+</tr>
+<tr>
+<td><code>DataLoader</code></td>
+<td>Handles file selection and parsing</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="notes">Notes</h2>
+<p>This class is currently responsible for too many aspects of the interface: tab lifecycle, dock logic, toolbar state, file handling, and persistence.
+Future work could separate:</p>
+<ul>
+<li>Tab creation logic</li>
+<li>Menu construction</li>
+<li>Toolbar state tracking</li>
+<li>Layout state into a controller class</li>
+</ul></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

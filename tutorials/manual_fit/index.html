@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Manual - Graphical Curve Fit for Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../user_guide/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/install/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/help/" class="dropdown-item">Getting help</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../basic_fit/" class="dropdown-item">Basic</a>
+</li>
+                                    
+<li>
+    <a href="../plots/" class="dropdown-item">Plots lmfit/odr</a>
+</li>
+                                    
+<li>
+    <a href="../mcmc/" class="dropdown-item">Plots mcmc</a>
+</li>
+                                    
+<li>
+    <a href="../multi_1d/" class="dropdown-item">Multi 1D</a>
+</li>
+                                    
+<li>
+    <a href="../2d_fit/" class="dropdown-item">2D fot</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Manual</a>
+</li>
+                                    
+<li>
+    <a href="../comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UI</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ui/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/menus/" class="dropdown-item">Menus</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/docks/" class="dropdown-item">Docks</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fit</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../fit/fit_formula/" class="dropdown-item">Formula</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_options/" class="dropdown-item">Options</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/manual/" class="dropdown-item">Manual Fit</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/results/" class="dropdown-item">Fit Result</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/mcmc/" class="dropdown-item">MCMC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data/data_loader/" class="dropdown-item">Load Data</a>
+</li>
+                                    
+<li>
+    <a href="../../data/custom_data_loader/" class="dropdown-item">Add Custom Loader</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Dev</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dev/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_tab/" class="dropdown-item">FitTab</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_control/" class="dropdown-item">Fit Control</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_processor/" class="dropdown-item">Fit Processor</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_comparison/" class="dropdown-item">Fit Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/plot/" class="dropdown-item">Plot System</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../2d_fit/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../comparison/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#manual-fitting-mode" class="nav-link">Manual Fitting Mode</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-load-the-data" class="nav-link">Step 1 – Load the data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-switch-to-manual-mode" class="nav-link">Step 2 – Switch to manual mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-3-define-a-formula" class="nav-link">Step 3 – Define a formula</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-adjust-the-sliders" class="nav-link">Step 4 – Adjust the sliders</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-5-use-it-to-set-initial-guesses" class="nav-link">Step 5 – Use it to set initial guesses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-use-manual-mode" class="nav-link">Why use manual mode?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="manual-fitting-mode">Manual Fitting Mode</h1>
+<p>This tutorial introduces the <strong>manual mode</strong>, which allows you to visualize the effect of a formula and manually adjust its parameters using sliders — without launching an automatic fit. This mode is ideal for verifying formulas, exploring parameter behavior, and setting good initial guesses.</p>
+<hr />
+<h2 id="step-1-load-the-data">Step 1 – Load the data</h2>
+<p>Use <code>File &gt; Load Data</code> and select:</p>
+<pre><code class="language-text">examples/data/manual_fit_tuto.csv
+</code></pre>
+<p>This dataset includes:</p>
+<ul>
+<li><code>X</code>: the main sweep variable</li>
+<li><code>Y</code>: a secondary index (discrete)</li>
+<li><code>Z</code>: the observed value for each (X, Y)</li>
+</ul>
+<p>After loading, the application automatically enters <strong>Fit per Y</strong> and displays a set of curves indexed by Y. </p>
+<blockquote>
+<p>There is no manual mode for 3d plots</p>
+</blockquote>
+<hr />
+<h2 id="step-2-switch-to-manual-mode">Step 2 – Switch to manual mode</h2>
+<p>In the <strong>Fit Control</strong> dock, click:</p>
+<pre><code class="language-text">Manual
+</code></pre>
+<p>This disables the "Fit" button and instead activates a <strong>slider interface</strong> for parameter adjustment. This allows real-time manipulation of parameters without optimization.</p>
+<hr />
+<h2 id="step-3-define-a-formula">Step 3 – Define a formula</h2>
+<p>Try the following example:</p>
+<pre><code class="language-python">z = A * sin(B * x + C) + D * y
+</code></pre>
+<p>Once entered, sliders appear for each parameter (<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>). You can now adjust them manually.</p>
+<ul>
+<li>Use the slider to change the value of the parameter</li>
+<li>The limits can be changed by clicking on the values at the ends of the sliders</li>
+</ul>
+<hr />
+<h2 id="step-4-adjust-the-sliders">Step 4 – Adjust the sliders</h2>
+<p>Each slider updates the plot in <strong>real time</strong>. You can:</p>
+<ul>
+<li>See how each parameter influences the curve</li>
+<li>Explore how well the formula matches the data visually</li>
+<li>Zoom/pan to inspect features in detail</li>
+</ul>
+<p>If in 2D mode (i.e. <code>Y</code> is present), a curve is displayed for each value of <code>Y</code>.</p>
+<p align="center">
+  <img src="/images/manual/tuto_manual_fit.png" alt="Manual mode sliders" />
+</p>
+
+<hr />
+<h2 id="step-5-use-it-to-set-initial-guesses">Step 5 – Use it to set initial guesses</h2>
+<p>Once a visually good match is found:</p>
+<ol>
+<li>Switch to a fitting method such as <code>lmfit</code>, <code>odr</code>, or <code>emcee</code></li>
+<li>The last slider values are retained as the initial guesses</li>
+<li>Click <strong>Fit</strong> to run the optimization from that point</li>
+</ol>
+<p>This can significantly improve convergence and avoid local minima.</p>
+<hr />
+<h2 id="why-use-manual-mode">Why use manual mode?</h2>
+<ul>
+<li>Quickly verify that the formula is well-formed</li>
+<li>Understand parameter roles and interactions</li>
+<li>Pre-tune parameters for faster and more accurate fitting</li>
+<li>Compare models before choosing one</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

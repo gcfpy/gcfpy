@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Plot System - Graphical Curve Fit for Python</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../../css/brands.min.css" rel="stylesheet"/>
+<link href="../../css/solid.min.css" rel="stylesheet"/>
+<link href="../../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">User guide</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_guide/getting_started/">Getting started</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/install/">Installation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/help/">Getting help</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Tutorials</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../tutorials/basic_fit/">Basic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/plots/">Plots lmfit/odr</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/mcmc/">Plots mcmc</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/multi_1d/">Multi 1D</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/2d_fit/">2D fot</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/manual_fit/">Manual</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/comparison/">Comparison</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">UI</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../ui/overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/menus/">Menus</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/docks/">Docks</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Fit</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../fit/fit_formula/">Formula</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_options/">Options</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/manual/">Manual Fit</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_comparison/">Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/results/">Fit Result</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/mcmc/">MCMC</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Data</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../data/data_loader/">Load Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../data/custom_data_loader/">Add Custom Loader</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-current="page" aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button">Dev</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_tab/">FitTab</a>
+</li>
+<li>
+<a class="dropdown-item" href="../toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_control/">Fit Control</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_processor/">Fit Processor</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_comparison/">Fit Comparison</a>
+</li>
+<li>
+<a aria-current="page" class="dropdown-item active" href="./">Plot System</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../fit_comparison/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#plot-system-overview">Plot System Overview</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#global-plot-architecture">Global Plot Architecture</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#1-1d-fit-plots-plotpy">1. 1D Fit Plots (plot.py)</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#2-multi-1d-fit-fit-per-y-plot2dpy">2. Multi-1D Fit (Fit per Y) (plot2d.py)</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#3-2d-surface-fit-plot2dpy">3. 2D Surface Fit (plot2d.py)</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#4-mcmc-diagnostic-plots-mcmc_plotpy">4. MCMC Diagnostic Plots (mcmc_plot.py)</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#5-comparison-plot-fit_comparisonpy">5. Comparison Plot (fit_comparison.py)</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#6-manual-fit-mode">6. Manual Fit Mode</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="plot-system-overview">Plot System Overview</h1>
+<p>This page summarizes all plotting components used in the application. It includes 1D fits, multi-1D fits, 2D surface fits, confidence bands, residuals, MCMC diagnostics, and model comparison.</p>
+<hr/>
+<h2 id="global-plot-architecture">Global Plot Architecture</h2>
+<div class="mermaid">graph TD
+    MainWindow --&gt; FitTab
+    FitTab --&gt; PlotWidget
+    FitTab --&gt; FitProcessor
+    FitTab --&gt; FitComparisonManager
+    FitProcessor --&gt;|fit result| PlotWidget
+    FitComparisonManager --&gt;|draw| PlotWidget
+
+    PlotWidget --&gt;|1D / Residuals| plot.py
+    PlotWidget --&gt;|2D: scatter/surface| plot2d.py
+    PlotWidget --&gt;|MCMC| mcmc_plot.py
+</div>
+<hr/>
+<h2 id="1-1d-fit-plots-plotpy">1. 1D Fit Plots (<code>plot.py</code>)</h2>
+<p>These are methods or utilities used for plotting raw 1D data, fitted curves, residuals, and confidence intervals.</p>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlotWidget.plot_data(df)</code></td>
+<td>Plots raw 1D data (X, Y)</td>
+<td><code>plot.py</code></td>
+</tr>
+<tr>
+<td><code>PlotWidget.plot_fit(x, y)</code></td>
+<td>Plots fitted curve on top of data</td>
+<td><code>plot.py</code></td>
+</tr>
+<tr>
+<td><code>PlotAnalysis.toggle_residuals_plot()</code></td>
+<td>Toggles residuals plot (Y - fit)</td>
+<td><code>plot_analysis.py</code></td>
+</tr>
+<tr>
+<td><code>PlotAnalysis.toggle_confidence_band()</code></td>
+<td>Toggles display of confidence intervals</td>
+<td><code>plot_analysis.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="2-multi-1d-fit-fit-per-y-plot2dpy">2. Multi-1D Fit (Fit per Y) (<code>plot2d.py</code>)</h2>
+<p>Plots used when performing a fit Z = f(X, Y_fixed) for multiple Y values.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plot_multi1d_data(ax, canvas, x, y, z, pw)</code></td>
+<td>Plots raw grouped data</td>
+<td><code>plot2d.py</code></td>
+</tr>
+<tr>
+<td><code>plot_multi1d_fit(ax, canvas, fits, pw)</code></td>
+<td>Overlays fitted curves Z=f(X,Y_fixed)</td>
+<td><code>plot2d.py</code></td>
+</tr>
+<tr>
+<td><code>PlotAnalysis.toggle_confidence_band()</code></td>
+<td>Confidence bands over Y slices</td>
+<td><code>plot_analysis.py</code></td>
+</tr>
+<tr>
+<td><code>PlotAnalysis.toggle_residuals_plot()</code> (mode: multi 1D)</td>
+<td>Residual plots per Y</td>
+<td><code>plot_analysis.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="3-2d-surface-fit-plot2dpy">3. 2D Surface Fit (<code>plot2d.py</code>)</h2>
+<p>Used for true 2D fits where Z = f(X, Y), showing surface and contour.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plot_2d_series(x, y, z, strategy)</code></td>
+<td>Raw Z data as scatter grouped by strategy</td>
+<td><code>plot2d.py</code></td>
+</tr>
+<tr>
+<td><code>plot_2d_surface_fit(ax, canvas, x, y, z, fit, pw)</code></td>
+<td>Fitted surface + 3D view + contour</td>
+<td><code>plot2d.py</code></td>
+</tr>
+<tr>
+<td><code>PlotAnalysis.plot_conf_interval_2d()</code></td>
+<td>Confidence region for surface fit</td>
+<td><code>plot_analysis.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="4-mcmc-diagnostic-plots-mcmc_plotpy">4. MCMC Diagnostic Plots (<code>mcmc_plot.py</code>)</h2>
+<p>Generated after a successful fit with <code>emcee</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MCMCPlot.show_mcmc_results(...)</code></td>
+<td>Dispatches the diagnostic plots</td>
+<td><code>mcmc_plot.py</code></td>
+</tr>
+<tr>
+<td><code>MCMCPlot.plot_walkers(...)</code></td>
+<td>Shows evolution of walker chains per param</td>
+<td><code>mcmc_plot.py</code></td>
+</tr>
+<tr>
+<td><code>MCMCPlot.plot_corner(...)</code></td>
+<td>Displays parameter correlations (corner)</td>
+<td><code>mcmc_plot.py</code></td>
+</tr>
+<tr>
+<td><code>MCMCPlot.plot_autocorrelation(...)</code></td>
+<td>Autocorrelation of each parameter chain</td>
+<td><code>mcmc_plot.py</code></td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-comparison-plot-fit_comparisonpy">5. Comparison Plot (<code>fit_comparison.py</code>)</h2>
+<p>Plots used in comparison mode to overlay stored fits.</p>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FitComparisonManager.redraw_comparison_plot()</code></td>
+<td>Rebuilds the fit overlay plot</td>
+<td><code>fit_comparison.py</code></td>
+</tr>
+<tr>
+<td><code>FitComparisonManager.create_comparison_plot()</code></td>
+<td>Initializes the matplotlib canvas</td>
+<td><code>fit_comparison.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="6-manual-fit-mode">6. Manual Fit Mode</h2>
+<p>In manual mode (sliders), the same plot functions are reused.</p>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlotWidget.plot_data(df)</code></td>
+<td>Raw data (X, Y)</td>
+<td><code>plot.py</code></td>
+</tr>
+<tr>
+<td><code>PlotWidget.plot_fit(x, y)</code></td>
+<td>Manual fit preview from sliders</td>
+<td><code>plot.py</code></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

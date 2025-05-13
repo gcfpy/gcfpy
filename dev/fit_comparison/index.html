@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Fit Comparison - Graphical Curve Fit for Python</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../../css/brands.min.css" rel="stylesheet"/>
+<link href="../../css/solid.min.css" rel="stylesheet"/>
+<link href="../../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">User guide</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_guide/getting_started/">Getting started</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/install/">Installation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/help/">Getting help</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Tutorials</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../tutorials/basic_fit/">Basic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/plots/">Plots lmfit/odr</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/mcmc/">Plots mcmc</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/multi_1d/">Multi 1D</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/2d_fit/">2D fot</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/manual_fit/">Manual</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/comparison/">Comparison</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">UI</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../ui/overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/menus/">Menus</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/docks/">Docks</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Fit</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../fit/fit_formula/">Formula</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_options/">Options</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/manual/">Manual Fit</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_comparison/">Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/results/">Fit Result</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/mcmc/">MCMC</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Data</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../data/data_loader/">Load Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../data/custom_data_loader/">Add Custom Loader</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-current="page" aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button">Dev</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_tab/">FitTab</a>
+</li>
+<li>
+<a class="dropdown-item" href="../toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_control/">Fit Control</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_processor/">Fit Processor</a>
+</li>
+<li>
+<a aria-current="page" class="dropdown-item active" href="./">Fit Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../plot/">Plot System</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../fit_processor/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../plot/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#fitcomparisonmanager">FitComparisonManager</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h2 id="fitcomparisonmanager"><code>FitComparisonManager</code></h2>
+<p>This class handles the storage, display, and export of multiple fitting results for comparison. It is used from within a <code>FitTab</code> to enable model benchmarking and result visualization.</p>
+<hr/>
+<h3 id="role-in-the-application">Role in the Application</h3>
+<ul>
+<li>Attached to each <code>FitTab</code> instance.</li>
+<li>Activated via the toolbar ("Compare" action).</li>
+<li>Stores all fit results (only 1D).</li>
+<li>
+<p>Provides a dock with:</p>
+</li>
+<li>
+<p>A matplotlib plot showing all selected models</p>
+</li>
+<li>A table listing fit parameters and scores</li>
+<li>A list to rename, enable/disable individual fits</li>
+<li>A CSV export button</li>
+</ul>
+<hr/>
+<h3 id="comparison-flow">Comparison Flow</h3>
+<div class="mermaid">flowchart TD
+    FTab[FitTab]
+
+
+    FTab --&gt;|calls| Comp[FitComparisonManager]
+    Comp --&gt;|store| Store[stored_fits]
+    Comp --&gt;|display| Dock[Comparison Dock]
+    Dock --&gt; PlotComp[Comparison Plot]
+    Dock --&gt; TableComp[Comparison Table]
+</div>
+<hr/>
+<h3 id="stored-data">Stored Data</h3>
+<p>Each entry in <code>stored_fits</code> is a dict containing:</p>
+<pre><code class="language-python">{
+    "formula": str,
+    "method": str,  # "lmfit", "odr", "emcee"
+    "params": lmfit.Parameters or dict,
+    "aic": float,
+    "bic": float,
+    "rmse": float,
+    "r_squared": float,
+    "chi_square": float,
+    "reduced_chi_square": float,
+}
+</code></pre>
+<hr/>
+<h3 id="supported-strategies">Supported Strategies</h3>
+<ul>
+<li><strong>1D Fit:</strong> Overlays different model predictions on a scatter plot of <code>X, Y</code>.</li>
+<li><strong>Fit per Y (multi-1D):</strong> Recomputes predictions for each <code>Y</code> slice, plots curves on <code>X, Z</code>.</li>
+</ul>
+<hr/>
+<h3 id="key-methods">Key Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>store_current_fit()</code></td>
+<td>Saves the current model result to internal list</td>
+</tr>
+<tr>
+<td><code>toggle_comparison_mode()</code></td>
+<td>Shows/hides the comparison interface</td>
+</tr>
+<tr>
+<td><code>create_comparison_ui()</code></td>
+<td>Builds dock with plot, list, table, and export button</td>
+</tr>
+<tr>
+<td><code>redraw_comparison_plot()</code></td>
+<td>Redraws model predictions over data depending on selected fits</td>
+</tr>
+<tr>
+<td><code>export_comparison_csv()</code></td>
+<td>Saves all stored results to a CSV file</td>
+</tr>
+<tr>
+<td><code>reset()</code></td>
+<td>Clears all stored data and disables comparison mode</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>Requires <code>fit_tab.plot_widget.result</code> to be set.</li>
+<li>Uses <code>parse_formula()</code> to dynamically recreate fit functions for plotting.</li>
+<li>Compatible with both <code>lmfit.ModelResult</code> and custom dicts from <code>emcee</code>/<code>odr</code>.</li>
+</ul></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

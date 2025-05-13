@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Toolbar - Graphical Curve Fit for Python</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../../css/brands.min.css" rel="stylesheet"/>
+<link href="../../css/solid.min.css" rel="stylesheet"/>
+<link href="../../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">User guide</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_guide/getting_started/">Getting started</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/install/">Installation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_guide/help/">Getting help</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Tutorials</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../tutorials/basic_fit/">Basic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/plots/">Plots lmfit/odr</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/mcmc/">Plots mcmc</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/multi_1d/">Multi 1D</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/2d_fit/">2D fot</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/manual_fit/">Manual</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../tutorials/comparison/">Comparison</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">UI</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../ui/overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/menus/">Menus</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/toolbar/">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../ui/docks/">Docks</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Fit</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../fit/fit_formula/">Formula</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_options/">Options</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/manual/">Manual Fit</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/fit_comparison/">Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/results/">Fit Result</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../fit/mcmc/">MCMC</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Data</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../data/data_loader/">Load Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../data/custom_data_loader/">Add Custom Loader</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-current="page" aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button">Dev</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../overview/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_tab/">FitTab</a>
+</li>
+<li>
+<a aria-current="page" class="dropdown-item active" href="./">Toolbar</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_control/">Fit Control</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_processor/">Fit Processor</a>
+</li>
+<li>
+<a class="dropdown-item" href="../fit_comparison/">Fit Comparison</a>
+</li>
+<li>
+<a class="dropdown-item" href="../plot/">Plot System</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../fit_tab/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../fit_control/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#toolbar">Toolbar</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#structure-diagram">Structure Diagram</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#responsibilities">Responsibilities</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#actions-and-menus">Actions and Menus</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#signal-flow">Signal Flow</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#integration-with-fittab">Integration with FitTab</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#related-files">Related Files</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="toolbar">Toolbar</h1>
+<p>This page documents the <code>Toolbar</code> class, which defines and manages all global user actions accessible via the top toolbar. These include launching a fit, toggling visual layers (residuals, confidence bands), and selecting fitting options such as method, smoothing, or weighting.</p>
+<p>The toolbar is created once by <code>MainWindow</code>, and emits Qt signals when the user interacts with it.</p>
+<h2 id="structure-diagram">Structure Diagram</h2>
+<div class="mermaid">graph TD
+    MainWindow --&gt; Toolbar
+    Toolbar --&gt; QActionResiduals[Residuals]
+    Toolbar --&gt; QActionConfidence[Confidence]
+    Toolbar --&gt; Smoothing
+    Toolbar --&gt; Weighting
+    Toolbar --&gt; a[X selection]
+    Toolbar --&gt; Compararison
+</div>
+<hr/>
+<h2 id="responsibilities">Responsibilities</h2>
+<ul>
+<li>Provides buttons for toggling residuals, confidence bands, components</li>
+<li>Includes menus for smoothing and weighting options</li>
+<li>Connects to <code>FitTab</code> and <code>PlotWidget</code> to trigger visual updates</li>
+<li>Adds or compares fit results across multiple runs</li>
+</ul>
+<hr/>
+<h2 id="actions-and-menus">Actions and Menus</h2>
+<table>
+<thead>
+<tr>
+<th>Action/Menu</th>
+<th>Type</th>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>toggle_confidence</code></td>
+<td>QAction</td>
+<td><code>conf_1d.png</code></td>
+<td>Show 99% confidence band (1D fit)</td>
+</tr>
+<tr>
+<td><code>toggle_residuals</code></td>
+<td>QAction</td>
+<td><code>resi.png</code></td>
+<td>Show residuals (data - fit)</td>
+</tr>
+<tr>
+<td><code>toggle_components</code></td>
+<td>QAction</td>
+<td><code>decomp.png</code></td>
+<td>Show component contributions</td>
+</tr>
+<tr>
+<td><code>toggle_conf_2d</code></td>
+<td>QAction</td>
+<td><code>conf_2d.png</code></td>
+<td>Show 2D confidence region (e.g. ellipse)</td>
+</tr>
+<tr>
+<td><code>set_xmin_xmax</code></td>
+<td>Checkable</td>
+<td>text only</td>
+<td>Select X-range for fit</td>
+</tr>
+<tr>
+<td><code>smoothing_menu</code></td>
+<td>QMenu</td>
+<td></td>
+<td>Gaussian, Moving Average, None</td>
+</tr>
+<tr>
+<td><code>weighting_menu</code></td>
+<td>QMenu</td>
+<td></td>
+<td>x_err, y_err, xy_err, none</td>
+</tr>
+<tr>
+<td><code>add_fit</code></td>
+<td>QAction</td>
+<td>none</td>
+<td>Add current fit to comparison list</td>
+</tr>
+<tr>
+<td><code>toggle_comparison</code></td>
+<td>Checkable</td>
+<td>none</td>
+<td>Enable comparison mode</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="signal-flow">Signal Flow</h2>
+<p>All logic is internal to the toolbar and calls back into <code>FitTab</code> or <code>PlotWidget</code>.</p>
+<pre><code class="language-python">self.toggle_residuals_action.triggered.connect(self.toggle_residuals)
+self.smooth_gaussian_action.triggered.connect(lambda: self._apply_smoothing("savgol"))
+</code></pre>
+<hr/>
+<h2 id="integration-with-fittab">Integration with FitTab</h2>
+<table>
+<thead>
+<tr>
+<th>Called Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tab.plot_widget.analysis_plot.toggle_residuals_plot()</code></td>
+<td>toggle residual display</td>
+</tr>
+<tr>
+<td><code>tab.weight_data("x_err")</code></td>
+<td>apply weighting method</td>
+</tr>
+<tr>
+<td><code>tab.smooth_data("avg")</code></td>
+<td>apply smoothing method</td>
+</tr>
+<tr>
+<td><code>tab.comparison_manager.store_current_fit()</code></td>
+<td>save current result</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="related-files">Related Files</h2>
+<ul>
+<li><code>toolbar.py</code>: UI structure and action handling</li>
+<li><code>toolbar_actions.py</code>: (optional) separate logic if extracted</li>
+<li><code>main_window.py</code>: connects toolbar to current tab</li>
+<li><code>plot_analysis.py</code>: defines the toggleable plot elements</li>
+</ul></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

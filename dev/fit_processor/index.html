@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Fit Processor - Graphical Curve Fit for Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../user_guide/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/install/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/help/" class="dropdown-item">Getting help</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutorials/basic_fit/" class="dropdown-item">Basic</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/plots/" class="dropdown-item">Plots lmfit/odr</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/mcmc/" class="dropdown-item">Plots mcmc</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/multi_1d/" class="dropdown-item">Multi 1D</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/2d_fit/" class="dropdown-item">2D fot</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/manual_fit/" class="dropdown-item">Manual</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorials/comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UI</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ui/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/menus/" class="dropdown-item">Menus</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/docks/" class="dropdown-item">Docks</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fit</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../fit/fit_formula/" class="dropdown-item">Formula</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_options/" class="dropdown-item">Options</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/manual/" class="dropdown-item">Manual Fit</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/results/" class="dropdown-item">Fit Result</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/mcmc/" class="dropdown-item">MCMC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data/data_loader/" class="dropdown-item">Load Data</a>
+</li>
+                                    
+<li>
+    <a href="../../data/custom_data_loader/" class="dropdown-item">Add Custom Loader</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Dev</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../fit_tab/" class="dropdown-item">FitTab</a>
+</li>
+                                    
+<li>
+    <a href="../toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../fit_control/" class="dropdown-item">Fit Control</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Fit Processor</a>
+</li>
+                                    
+<li>
+    <a href="../fit_comparison/" class="dropdown-item">Fit Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../plot/" class="dropdown-item">Plot System</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../fit_control/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../fit_comparison/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#fitprocessor" class="nav-link">FitProcessor</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#responsibilities" class="nav-link">Responsibilities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#entry-points" class="nav-link">Entry Points</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mcmc-support-emcee" class="nav-link">MCMC Support (emcee)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#confidence-bands" class="nav-link">Confidence Bands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#method-summary" class="nav-link">Method Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="fitprocessor">FitProcessor</h1>
+<p>The <code>FitProcessor</code> class encapsulates all curve fitting logic, independently of the UI. It handles multiple fitting strategies (<code>lmfit</code>, <code>ODR</code>, <code>emcee</code>) and supports 1D fitting, multi-1D (Fit per Y), and full 2D surface fitting.</p>
+<hr />
+<h2 id="responsibilities">Responsibilities</h2>
+<ul>
+<li>Convert a formula string to a Python function (<code>generate_fit_function</code>)</li>
+<li>Prepare fitting parameters and options (<code>prepare_parameters</code>)</li>
+<li>Dispatch the fitting logic depending on the selected method and strategy</li>
+<li>Return results in a unified format: <code>(result, minimizer, best_fit, confidence_band)</code></li>
+</ul>
+<hr />
+<h2 id="entry-points">Entry Points</h2>
+<h3 id="1-standard-1d-fit">1. Standard 1D Fit</h3>
+<pre><code class="language-python">result, model, best_fit, band = processor.process_fit(
+    formula=&quot;y = A * exp(-B * x)&quot;,
+    x_data=x,
+    y_data=y,
+    weights=w,
+    weighting_method=&quot;None&quot;,
+)
+</code></pre>
+<p>Dispatches to:</p>
+<ul>
+<li><code>lmfit</code> → <code>_process_lmfit()</code></li>
+<li><code>odr</code>   → <code>_process_odr()</code></li>
+<li><code>emcee</code> → <code>_run_emcee()</code></li>
+</ul>
+<hr />
+<h3 id="2-multi-1d-fit-z-fx-with-fixed-y">2. Multi 1D Fit (Z = f(X) with fixed Y)</h3>
+<pre><code class="language-python">result, minimizer, best_fit, band = processor.process_fit_per_y(formula, x, y, z)
+</code></pre>
+<p>Performs a global fit with Y treated as a fixed value in each Z slice.
+Supports <code>lmfit</code>, <code>odr</code>, <code>emcee</code>.</p>
+<hr />
+<h3 id="3-full-2d-surface-fit">3. Full 2D Surface Fit</h3>
+<pre><code class="language-python">func = processor.generate_fit_function(formula)
+result, _, best_fit, band = processor.process_fit_surface(formula, func, x, y, z)
+</code></pre>
+<p>Z is modeled as a function of both X and Y. Each method is supported:</p>
+<ul>
+<li><code>lmfit</code>: <code>process_fit_surface</code></li>
+<li><code>odr</code>: <code>process_fit_surface_odr</code></li>
+<li><code>emcee</code>: <code>process_fit_surface_emcee</code></li>
+</ul>
+<hr />
+<h2 id="mcmc-support-emcee">MCMC Support (emcee)</h2>
+<p>All MCMC fits are handled via:</p>
+<pre><code class="language-python">_run_emcee(func, param_info, inputs, targets, sigma, fit_options, mode)
+</code></pre>
+<p>The <code>mode</code> argument changes the likelihood evaluation:</p>
+<ul>
+<li><code>"1d"</code></li>
+<li><code>"per_y"</code> (multi 1D)</li>
+<li><code>"surface"</code></li>
+</ul>
+<p>Returns:</p>
+<pre><code class="language-python">result: dict
+sampler: emcee.EnsembleSampler
+best_fit: np.ndarray
+confidence_band: Tuple[np.ndarray, np.ndarray]
+</code></pre>
+<hr />
+<h2 id="confidence-bands">Confidence Bands</h2>
+<p>The 99% confidence bands are:</p>
+<ul>
+<li>computed from <code>result.eval_uncertainty(sigma=3)</code> in <code>lmfit</code></li>
+<li>extracted from the MCMC prediction percentiles</li>
+<li>approximated via the covariance matrix in <code>ODR</code></li>
+</ul>
+<hr />
+<h2 id="method-summary">Method Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generate_fit_function()</code></td>
+<td>Turns formula into executable Python function</td>
+</tr>
+<tr>
+<td><code>prepare_parameters()</code></td>
+<td>Extracts p0, bounds from FitOptions dialog</td>
+</tr>
+<tr>
+<td><code>process_fit()</code></td>
+<td>Entry for standard 1D fit</td>
+</tr>
+<tr>
+<td><code>process_fit_per_y()</code></td>
+<td>Entry for multi-1D fit (Z = f(X), fixed Y)</td>
+</tr>
+<tr>
+<td><code>process_fit_surface()</code></td>
+<td>Entry for full surface fit</td>
+</tr>
+<tr>
+<td><code>_run_emcee()</code></td>
+<td>Shared backend for MCMC fits</td>
+</tr>
+<tr>
+<td><code>_process_lmfit()</code></td>
+<td>Core least-squares fitting with <code>lmfit.Model</code></td>
+</tr>
+<tr>
+<td><code>_process_odr()</code></td>
+<td>Fitting using orthogonal distance regression (ODR)</td>
+</tr>
+<tr>
+<td><code>reset_fit()</code></td>
+<td>Clears result, toolbar, and reinitializes plots</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

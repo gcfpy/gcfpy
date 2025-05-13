@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Basic - Graphical Curve Fit for Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atelier-dune-light.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Graphical Curve Fit for Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../user_guide/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/install/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../user_guide/help/" class="dropdown-item">Getting help</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Basic</a>
+</li>
+                                    
+<li>
+    <a href="../plots/" class="dropdown-item">Plots lmfit/odr</a>
+</li>
+                                    
+<li>
+    <a href="../mcmc/" class="dropdown-item">Plots mcmc</a>
+</li>
+                                    
+<li>
+    <a href="../multi_1d/" class="dropdown-item">Multi 1D</a>
+</li>
+                                    
+<li>
+    <a href="../2d_fit/" class="dropdown-item">2D fot</a>
+</li>
+                                    
+<li>
+    <a href="../manual_fit/" class="dropdown-item">Manual</a>
+</li>
+                                    
+<li>
+    <a href="../comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">UI</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ui/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/menus/" class="dropdown-item">Menus</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../../ui/docks/" class="dropdown-item">Docks</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fit</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../fit/fit_formula/" class="dropdown-item">Formula</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_options/" class="dropdown-item">Options</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/manual/" class="dropdown-item">Manual Fit</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/fit_comparison/" class="dropdown-item">Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/results/" class="dropdown-item">Fit Result</a>
+</li>
+                                    
+<li>
+    <a href="../../fit/mcmc/" class="dropdown-item">MCMC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data/data_loader/" class="dropdown-item">Load Data</a>
+</li>
+                                    
+<li>
+    <a href="../../data/custom_data_loader/" class="dropdown-item">Add Custom Loader</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Dev</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dev/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_tab/" class="dropdown-item">FitTab</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/toolbar/" class="dropdown-item">Toolbar</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_control/" class="dropdown-item">Fit Control</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_processor/" class="dropdown-item">Fit Processor</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/fit_comparison/" class="dropdown-item">Fit Comparison</a>
+</li>
+                                    
+<li>
+    <a href="../../dev/plot/" class="dropdown-item">Plot System</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../user_guide/help/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../plots/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#basic-1d-fit" class="nav-link">Basic 1D Fit</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-load-example-data" class="nav-link">Step 1 – Load Example Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-enter-a-fit-formula" class="nav-link">Step 2 – Enter a Fit Formula</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-3-configure-fit-options-optional" class="nav-link">Step 3 – Configure Fit Options (Optional)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-run-the-fit" class="nav-link">Step 4 – Run the Fit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="basic-1d-fit">Basic 1D Fit</h1>
+<p>This tutorial walks through the essential steps to perform a basic 1D fit using the <strong>Graphical Curve Fit for Python</strong> application. It is designed for first-time users to become familiar with the core workflow: loading data, defining a model, fitting, and analyzing the results.</p>
+<hr />
+<h2 id="step-1-load-example-data">Step 1 – Load Example Data</h2>
+<ol>
+<li>Launch the application:
+   <code>bash
+   gcfpy</code></li>
+<li>Go to <code>File &gt; Load Data</code></li>
+<li>Select the file:
+   <code>examples/data/linear.csv</code></li>
+<li>Two docks will appear:</li>
+<li><strong>X/Y Data</strong>: showing the raw data</li>
+<li><strong>Fit Control</strong>: tools to launch and manage fits</li>
+</ol>
+<p align="center">
+  <img src="/images/tuto_basic_data.png" alt="data"  />
+</p>
+
+<hr />
+<h2 id="step-2-enter-a-fit-formula">Step 2 – Enter a Fit Formula</h2>
+<p>A formula is automatically added to the <strong>fit formula</strong> dock:</p>
+<pre><code class="language-python">y = a * x + b
+</code></pre>
+<p>The application automatically extracts the parameters (<code>a</code>, <code>b</code>) and sets them up for fitting.</p>
+<p>You may also use built-in functions like <code>sin</code>, <code>exp</code>, <code>log</code>, and physical constants such as <code>pi</code>, <code>e</code>, <code>h</code>, etc.</p>
+<hr />
+<h2 id="step-3-configure-fit-options-optional">Step 3 – Configure Fit Options (Optional)</h2>
+<p>Open the <strong>Fit Options</strong> dialog if you want to:</p>
+<ul>
+<li>Set initial guesses for <code>a</code> and <code>b</code></li>
+<li>Define bounds</li>
+<li>Choose a different optimizer (default is <code>leastsq</code>)</li>
+</ul>
+<p>This step is optional – default values will work for most basic examples.</p>
+<hr />
+<h2 id="step-4-run-the-fit">Step 4 – Run the Fit</h2>
+<p>Press the <strong>Run Fit</strong> button in the Fit Control dock</p>
+<p>Upon completion, the following are updated:</p>
+<ul>
+<li><strong>Results Dock</strong>: fitted values, standard errors, and metrics (AIC, BIC, RMSE, etc.)</li>
+<li><strong>Plot</strong>: displays the best-fit line</li>
+</ul>
+<p align="center">
+  <img src="/images/tuto_basic_fit.png" alt="fit"  />
+</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
