@@ -17,7 +17,7 @@ nav:
       - Plots lmfit/odr : tutorials/plots.md
       - Plots mcmc : tutorials/mcmc.md
       - Multi 1D : tutorials/multi_1d.md
-      - 2D fot : tutorials/2d_fit.md
+      - 2D fit : tutorials/2d_fit.md
       - Manual : tutorials/manual_fit.md
       - Comparison: tutorials/comparison.md
   - UI:
