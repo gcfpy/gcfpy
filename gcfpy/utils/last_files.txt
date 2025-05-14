@@ -1,5 +1,5 @@
-D:/Data/JeanBaptiste/program/gcfpy/examples/data/multi1d_fit_tuto.csv
-D:/Data/JeanBaptiste/program/gcfpy/examples/data/surface.csv
-D:/Data/JeanBaptiste/program/gcfpy/examples/data/manual_fit_tuto.csv
 D:/Data/JeanBaptiste/program/gcfpy/examples/data/fit_comparison.csv
 D:/Data/JeanBaptiste/program/gcfpy/examples/data/complex_data.csv
+C:/Users/jean-bapt.filippini/Documents/pgm/gcfpy/examples/data/two_gaussians_with_slope.csv
+C:/Users/jean-bapt.filippini/Documents/pgm/gcfpy/examples/data/example_2d_fit_data.csv
+C:/Users/jean-bapt.filippini/Documents/pgm/gcfpy/examples/data/multi1d_fit_tuto.csv

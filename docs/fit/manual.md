@@ -43,9 +43,7 @@ Sliders are dynamically created based on the parameters detected in your fit for
 
 The fit result updates automatically as you slide.
 
-<p align="center">
-  <img src="/images/Manual.png" alt="Manual sliders"  />
-</p>
+![Manual sliders](../images/Manual.png)
 
 ---
 

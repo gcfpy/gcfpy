@@ -57,10 +57,7 @@ You can also change the method to:
 
 > If using emcee, it's recommended to first run a classical fit to improve convergence.
 
-<p align="center">
-  <img src="/images/tuto_multi_1d/tuto_multi_1d_fit.png" alt="Multi Y fit plot" />
-</p>
-
+![Multi Y fit plot](../images/tuto_multi_1d_fit.png)
 
 ---
 

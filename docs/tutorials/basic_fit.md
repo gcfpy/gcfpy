@@ -19,10 +19,8 @@ This tutorial walks through the essential steps to perform a basic 1D fit using 
    * **X/Y Data**: showing the raw data
    * **Fit Control**: tools to launch and manage fits
 
-<p align="center">
-  <img src="/images/tuto_basic_data.png" alt="data"  />
-</p>
 
+![data](../images/tuto_basic_data.png)
 ---
 
 ## Step 2 – Enter a Fit Formula
@@ -60,8 +58,5 @@ Upon completion, the following are updated:
 * **Results Dock**: fitted values, standard errors, and metrics (AIC, BIC, RMSE, etc.)
 * **Plot**: displays the best-fit line
 
-
-<p align="center">
-  <img src="/images/tuto_basic_fit.png" alt="fit"  />
-</p>
+![fit](../images/tuto_basic_fit.png)
 

@@ -39,27 +39,22 @@ The graphical representation is organized into multiple tabs in the **Plot Area*
 * **Residuals Plot**
   Shows `data - fit` to identify systematic discrepancies.
 
-  <p align="center">
-    <img src="/images/residual.png" alt="Residual plot"  />
-  </p>
+![Residual plot](../images/residual.png)
+
 
 * **Confidence Band**
   Visualizes uncertainty on the model as a shaded region (3sigma). This requires confidence interval computation to be active.
 
-  <p align="center">
-    <img src="/images/1d_confidence.png" alt="1d confidence plot"  />
-  </p>
+![1d confidence plot](../images/1d_confidence.png)
+
 
 * **Decomposition Plot**
   Plots the individual terms of the symbolic model. This helps understand the role of each component.
 
-  <p align="center">
-    <img src="/images/decomposition.png" alt="Decomposition plot"  />
-  </p>
+![Decomposition plot](../images/decomposition.png)
+
 
 * **2D Confidence Contours**
   Displays elliptical regions in parameter space to illustrate correlations between pairs of parameters. Only available for fits made by lmfit.
 
-  <p align="center">
-    <img src="/images/2d_contour.png" alt="2d contour plot"  />
-  </p>
+![2d contour plot](../images/2d_contour.png)

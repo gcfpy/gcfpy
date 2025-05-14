@@ -21,10 +21,8 @@ examples/data/double_gaussian_with_slope.csv
 
 The data will be automatically plotted, and the table will be filled.
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_data.png" alt="data"  />
-</p>
 
+![data](../images/tuto_plots_data.png)
 
 ---
 
@@ -38,9 +36,8 @@ Click the **Xmin/Xmax** button in the toolbar.
 This allows excluding noisy or irrelevant parts of the dataset.
 
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_x_select.png" alt="x selection"  />
-</p>
+![x selection](../images/tuto_plots_x_select.png)
+
 
 ---
 
@@ -72,9 +69,9 @@ This will produce the main fit curve and open the **Fit Results** dock.
 
 Once the fit is complete, you can activate various diagnostics via the toolbar:
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_data.png" alt="fit"  />
-</p>
+
+![fit](../images/tuto_plots_data.png)
+
 
 ---
 
@@ -85,9 +82,7 @@ Enable the **Confidence Interval** icon.
 * A shaded region appears around the fit
 * Indicates uncertainty based on parameter covariance
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_99.png" alt="99"  />
-</p>
+![99](../images/tuto_plots_99.png)
 
 ---
 
@@ -98,9 +93,8 @@ Click the **Residuals** icon.
 * Opens a Data–Fit residuals tab below the main plot
 * Displays the deviation between experimental data and fitted curve, helping detect systematic errors or poor model agreement
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_res.png" alt="residual"  />
-</p>
+![residual](../images/tuto_plots_res.png)
+
 
 ---
 
@@ -111,10 +105,7 @@ Click the **Fit decomposition** icon.
 * Displays individual model terms (Gaussian + slope)
 * Useful for understanding each contribution
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_decomp.png" alt="decomposition"  />
-</p>
-
+![decomposition](../images/tuto_plots_decomp.png)
 
 ---
 
@@ -125,8 +116,7 @@ Enable the **2D Contour** icon.
 * Shows contour plots of parameter correlations
 * Especially useful to detect strong dependencies
 
-<p align="center">
-  <img src="/images/tuto_plots/tuto_plots_2d.png" alt="2d"  />
-</p>
+![2d](../images/tuto_plots_2d.png)
+
 ---
 

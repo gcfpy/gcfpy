@@ -62,9 +62,7 @@ You can also switch to alternative methods:
 
 > For emcee, it’s often recommended to first run a classical fit to initialize the parameters.
 
-<p align="center">
-  <img src="/images/tuto_2d/tuto_2d_fit.png" alt="2D surface fit" />
-</p>
+![2D surface fit](../images/tuto_2d_fit.png)
 
 ---
 

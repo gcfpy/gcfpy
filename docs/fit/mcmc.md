@@ -14,9 +14,8 @@ When fitting a model using the **MCMC** method (via `emcee`), the application pr
 - Each subplot provides histograms (diagonal) and 2D scatter plots (off-diagonal).
 - Useful to assess parameter correlations, asymmetry.
 
-  <p align="center">
-    <img src="/images/corner.png" alt="corner plot"  />
-  </p>
+![corner plot](../images/corner.png)
+
 
 ## 3. Walkers Plot
 
@@ -24,19 +23,15 @@ When fitting a model using the **MCMC** method (via `emcee`), the application pr
 - Helps diagnose convergence and detect sampling issues (e.g., stuck walkers).
 - Walkers should appear well-mixed and stable after the burn-in period.
 
-  <p align="center">
-    <img src="/images/walkers.png" alt="walkers plot"  />
-  </p>
+![walkers plot](../images/walkers.png)
 
 ## 4. Autocorrelation Plot
 
 - Displays the autocorrelation time of each parameter.
 - Allows evaluation of sampling efficiency and helps determine appropriate `thin` or `burn` settings.
 
+![autocorrelation plot](../images/autocorrelation.png)
 
-  <p align="center">
-    <img src="/images/autocorrelation.png" alt="autocorrelation plot"  />
-  </p>
 
 
 ## Notes

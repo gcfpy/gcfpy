@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-Graphical Curve Fit for Python requires **Python 3.8 or higher**. The following Python packages are needed for the core functionality:
+Graphical Curve Fit for Python requires **Python 3.10 or higher**. The following Python packages are needed for the core functionality:
 
 | Package            | Version (min) | Purpose                            |
 | ------------------ | ------------- | ---------------------------------- |

@@ -74,9 +74,7 @@ In the comparison dock, you’ll find:
 * Fit quality metrics (e.g. AIC, R², RMSE)
 * A table listing parameter values per model
 
-<p align="center">
-  <img src="/images/comparison/tuto_compa_comp.png" alt="1D fit comparison example" />
-</p>
+![1D fit comparison example](../images/tuto_compa_comp.png)
 
 ---
 

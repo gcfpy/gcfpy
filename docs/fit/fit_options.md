@@ -28,9 +28,8 @@ This table lists all parameters extracted from the current formula. For each par
 
 These values are passed to the backend fitting engine and directly influence convergence.
 
-<p align="center">
-  <img src="/images/fit_options_p0.png" alt="Parameters table"  />
-</p>
+![Parameters table](../images/fit_options_p0.png)
+
 
 
 ## Optimizer-Specific Settings
@@ -45,10 +44,8 @@ Below the parameter table, method-specific options appear based on the selected 
 | `scale_covar`        | Whether to rescale the covariance output |
 | `xtol / ftol / gtol` | Tolerances for convergence               |
 
+![Optimizer settings](../images/fit_options_fit_params.png)
 
-<p align="center">
-  <img src="/images/fit_options_fit_params.png" alt="Optimizer settings"  />
-</p>
 
 These settings are passed to `scipy.optimize.leastsq()` via `lmfit`.
 
@@ -62,10 +59,8 @@ These settings are passed to `scipy.optimize.leastsq()` via `lmfit`.
 | `thin`        | Thinning factor to reduce autocorrelation           |
 | `is_weighted` | Whether to include `y_err` or `sigma` in the likelihood |
 
+![Optimizer settings mcmc](../images/fit_options_fit_params_mcmc.png)
 
-<p align="center">
-  <img src="/images/fit_options_fit_params_mcmc.png" alt="Optimizer settings mcmc"  />
-</p>
 
 These options control the behavior of the `emcee.EnsembleSampler`.
 

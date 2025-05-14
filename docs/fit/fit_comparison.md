@@ -6,9 +6,8 @@ The Fit Comparison mode allows users to store and visualize multiple fitting res
 
 Once enabled, comparison mode overlays stored fits onto the main plot as additional curves. Each stored result is displayed in a distinct dashed line and accompanied by a summary table showing key fitting metrics. The raw data remains visible, ensuring that all models can be evaluated relative to the same experimental points.
 
-<p align="center">
-  <img src="/images/comparison.png" alt="Comparison mode"  />
-</p>
+![Comparison mode](../images/comparison.png)
+
 
 ## Key Features
 

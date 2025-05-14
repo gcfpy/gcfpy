@@ -62,9 +62,9 @@ Click the **Fit Options** button to open the configuration dialog. Go to the **G
   * `thin`: 5
 * Enable `is_weighted` if your dataset includes `Y_err`
 
-<p align="center">
-  <img src="/images/tuto_mcmc/tuto_mcmc_general_options.png" alt="general options"  />
-</p>
+
+![general options](../images/tuto_mcmc_general_options.png)
+
 
 Click **OK** to confirm.
 
@@ -87,9 +87,8 @@ Four types of plots are generated automatically:
 * A shaded region represents the 99% confidence interval.
 * This interval is computed using percentiles over 500 randomly selected samples.
 
-<p align="center">
-  <img src="/images/tuto_mcmc/tuto_mcmc_99.png" alt="Confidence band" />
-</p>
+![Confidence band](../images/tuto_mcmc_99.png)
+
 
 ---
 
@@ -98,9 +97,8 @@ Four types of plots are generated automatically:
 * Shows marginal and joint posterior distributions for all parameters.
 * Useful to evaluate uncertainty and parameter correlations.
 
-<p align="center">
-  <img src="/images/tuto_mcmc/tuto_mcmc_corners.png" alt="Corner plot" />
-</p>
+![Corner plot](../images/tuto_mcmc_corners.png)
+
 
 ---
 
@@ -109,9 +107,7 @@ Four types of plots are generated automatically:
 * Each walker trajectory is plotted per parameter.
 * Helps assess convergence and sample mixing.
 
-<p align="center">
-  <img src="/images/tuto_mcmc/tuto_mcmc_walkers.png" alt="Walkers plot" />
-</p>
+![Walkers plot](../images/tuto_mcmc_walkers.png)
 
 ---
 
@@ -120,7 +116,4 @@ Four types of plots are generated automatically:
 * Displays the autocorrelation as a function of lag for each parameter.
 * Helps estimate the effective sample size.
 
-<p align="center">
-  <img src="/images/tuto_mcmc/tuto_mcmc_autoco.png" alt="Autocorrelation plot" />
-</p>
-
+![Autocorrelation plot](../images/tuto_mcmc_autoco.png)

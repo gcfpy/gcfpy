@@ -60,9 +60,7 @@ Each slider updates the plot in **real time**. You can:
 
 If in 2D mode (i.e. `Y` is present), a curve is displayed for each value of `Y`.
 
-<p align="center">
-  <img src="/images/manual/tuto_manual_fit.png" alt="Manual mode sliders" />
-</p>
+![Manual mode sliders](../images/tuto_manual_fit.png)
 
 ---
 
