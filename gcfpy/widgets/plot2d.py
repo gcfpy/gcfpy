@@ -102,8 +102,15 @@ def plot_multi1d_fit(ax, canvas, fits, plot_widget):
     """
     Plot fitted Z = f(X) curves, one per fixed Y.
     """
+    selected_x = getattr(plot_widget, "selected_x", None)
+
     for x, fit_z, y_val in fits:
+        if selected_x is not None:
+            mask_x = np.isin(x, selected_x)
+            x = x[mask_x]
+            fit_z = fit_z[mask_x]
         ax.plot(x, fit_z, "--", color="red", zorder=5, lw=2)
+
     canvas.draw()
 
     if plot_widget:

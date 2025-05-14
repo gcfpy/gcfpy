@@ -41,7 +41,7 @@ class PlotAnalysis:
 
         if mode == "2D" and strategy == "Fit per Y":
             # --- Multi 1D Mode ---
-            df = getattr(self.plot_widget.parent.get_current_fit_tab(), "df", None)
+            df = getattr(fit_tab, "df", None)
             best_fit = self.plot_widget.fit_y
             if df is None or best_fit is None:
                 print("Multi 1D: Missing dataframe or fit.")
@@ -51,13 +51,22 @@ class PlotAnalysis:
             y = df["Y"].values
             z = df["Z"].values
             residuals = z - best_fit
+            selected_x = getattr(self.plot_widget, "selected_x", None)
 
             unique_y = np.unique(y)
             for y_val in unique_y:
-                mask = y == y_val
+                mask_y = y == y_val
+                x_vals = x[mask_y]
+                res_vals = residuals[mask_y]
+
+                if selected_x is not None:
+                    mask_x = np.isin(x_vals, selected_x)
+                    x_vals = x_vals[mask_x]
+                    res_vals = res_vals[mask_x]
+
                 self.plot_widget.ax_res.scatter(
-                    x[mask],
-                    residuals[mask],
+                    x_vals,
+                    res_vals,
                     label=f"Y={y_val:.2f}",
                     alpha=0.6,
                     s=10,
@@ -69,6 +78,7 @@ class PlotAnalysis:
             self.plot_widget.ax_res.set_ylabel("Residuals")
             self.plot_widget.ax_res.set_xlabel("X")
             self.plot_widget.ax_res.legend()
+
         else:
             # --- 1D classique ---
             if self.plot_widget.fit_y is None:
@@ -116,7 +126,6 @@ class PlotAnalysis:
         self.plot_widget.show_confidence = not self.plot_widget.show_confidence
 
         if mode == "2D" and strategy == "Fit per Y":
-            # Multi 1D mode
             df = self.plot_widget.parent.get_current_fit_tab().df
             if df is None or self.plot_widget.fit_y is None:
                 print("No fit or data available.")
@@ -127,25 +136,30 @@ class PlotAnalysis:
             z = df["Z"].values
             fit = self.plot_widget.fit_y
             conf = self.plot_widget.confidence_band
-            # if fit is None or conf is None:
-            #     print("No confidence band for Multi 1D.")
-            #     return
+            selected_x = getattr(self.plot_widget, "selected_x", None)
 
             unique_y = np.unique(y)
             for y_val in unique_y:
-                mask = y == y_val
-                x_vals = x[mask]
-                z_vals = z[mask]
-                fit_vals = fit[mask]
+                mask_y = y == y_val
+                x_vals = x[mask_y]
+                z_vals = z[mask_y]
+                fit_vals = fit[mask_y]
+
+                if selected_x is not None:
+                    mask_x = np.isin(x_vals, selected_x)
+                    x_vals = x_vals[mask_x]
+                    z_vals = z_vals[mask_x]
+                    fit_vals = fit_vals[mask_x]
+
                 lower = (
-                    fit_vals - conf[0][mask]
+                    fit_vals - conf[0][mask_y][mask_x]
                     if isinstance(conf, tuple)
-                    else fit_vals - conf[mask]
+                    else fit_vals - conf[mask_y][mask_x]
                 )
                 upper = (
-                    fit_vals + conf[1][mask]
+                    fit_vals + conf[1][mask_y][mask_x]
                     if isinstance(conf, tuple)
-                    else fit_vals + conf[mask]
+                    else fit_vals + conf[mask_y][mask_x]
                 )
 
                 ax.plot(

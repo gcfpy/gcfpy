@@ -1,4 +1,8 @@
+# Changelog
 ## [Unreleased]
+### Fixed
+- Change in image reference in the documentation 
+- Apply only x selection in multi 1d fit 
 
 ## [0.1.0] - 2025-05-02
 ### Added
