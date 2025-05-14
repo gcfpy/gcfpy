@@ -266,29 +266,20 @@
 <li>Each subplot provides histograms (diagonal) and 2D scatter plots (off-diagonal).</li>
 <li>Useful to assess parameter correlations, asymmetry.</li>
 </ul>
-<p align="center">
-    <img src="/images/corner.png" alt="corner plot"  />
-  </p>
-
+<p><img alt="corner plot" src="../../images/corner.png" /></p>
 <h2 id="3-walkers-plot">3. Walkers Plot</h2>
 <ul>
 <li>Plots the value of each parameter across sampling steps for all walkers.</li>
 <li>Helps diagnose convergence and detect sampling issues (e.g., stuck walkers).</li>
 <li>Walkers should appear well-mixed and stable after the burn-in period.</li>
 </ul>
-<p align="center">
-    <img src="/images/walkers.png" alt="walkers plot"  />
-  </p>
-
+<p><img alt="walkers plot" src="../../images/walkers.png" /></p>
 <h2 id="4-autocorrelation-plot">4. Autocorrelation Plot</h2>
 <ul>
 <li>Displays the autocorrelation time of each parameter.</li>
 <li>Allows evaluation of sampling efficiency and helps determine appropriate <code>thin</code> or <code>burn</code> settings.</li>
 </ul>
-<p align="center">
-    <img src="/images/autocorrelation.png" alt="autocorrelation plot"  />
-  </p>
-
+<p><img alt="autocorrelation plot" src="../../images/autocorrelation.png" /></p>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>All MCMC diagnostics are computed after discarding the burn-in period.</li>
